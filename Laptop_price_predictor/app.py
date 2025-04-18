@@ -3,8 +3,9 @@ import pickle
 import numpy as np
 
 # import model
-pipe=pickle.load(open('pipe.pkl','rb'))
 df=pickle.load(open('df.pkl','rb'))
+pipe=pickle.load(open('pipe.pkl','rb'))
+
 
 st.title('Laptop Price Predictor')
 
