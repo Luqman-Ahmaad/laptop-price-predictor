@@ -22,3 +22,8 @@ This project is a machine learning-based **Laptop Price Prediction** model that 
 1. Clone this repository to your local machine:
    ```bash
    git clone https://github.com/Luqman-Ahmaad/Laptop_price_predictor.git
+
+   ## Live Preview
+
+Check out the live demo of the app at [Laptop Price Predictor Demo](https://laptop-price-predictor-vz7qxtnw8eagvpjgkxy2rt.streamlit.app/).
+
