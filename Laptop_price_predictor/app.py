@@ -1,11 +1,16 @@
 import streamlit as st
 import pickle
 import numpy as np
-
+import os
 # import model
-df=pickle.load(open('df.pkl','rb'))
-pipe=pickle.load(open('pipe.pkl','rb'))
 
+
+# Get absolute path to current file
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load model and data safely using full path
+df = pickle.load(open(os.path.join(BASE_DIR, 'df.pkl'), 'rb'))
+pipe = pickle.load(open(os.path.join(BASE_DIR, 'pipe.pkl'), 'rb'))
 
 st.title('Laptop Price Predictor')
 
@@ -69,4 +74,4 @@ if st.button('Predict Price'):
     query=np.array([company,types,ram,weight,touchScreen,ips,ppi,cpu,hdd,ssd,gpu,os])
     query=query.reshape(1,12)
 
-    st.title(int(np.exp(pipe.predict(query)[0])))
+    st.title("The Predicted Price of this configuration is : "+ str(int(np.exp(pipe.predict(query)[0]))))
